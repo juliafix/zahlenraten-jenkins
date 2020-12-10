@@ -6,9 +6,10 @@ pipeline {
   
     stage ('compile'){
     def mvnHome = tool name: 'localmaven', type: 'maven'
+      sh "${mvnHome}/bin/mvn compile"
       steps {
         
-        sh "${mvnHome}/bin/mvn compile"
+        
         echo "compiling the application"
       }
     }
