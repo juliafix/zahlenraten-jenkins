@@ -2,14 +2,16 @@ pipeline {
 
   agent any
   
+  tools {
+    maven 'localmaven'
+  }
+  
   stages {
   
     stage ('compile'){
-    def mvnHome = tool name: 'localmaven', type: 'maven'
-      sh "${mvnHome}/bin/mvn compile"
+      
       steps {
-        
-        
+        sh 'mvn compile'
         echo "compiling the application"
       }
     }
