@@ -6,7 +6,6 @@ pipeline {
   }
   
   stages {
-    tool name: 'localmaven', type: 'maven'
   
     stage ('compile'){
     
