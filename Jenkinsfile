@@ -1,17 +1,15 @@
 pipeline {
 
   agent any
-  environment {
-    PATH = '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/localmaven/bin:$PATH'
-  }
   
   stages {
   
     stage ('compile'){
     
       steps {
-        sh 'mvn compile'
-        echo 'compiling the application'
+        def mvnHome = tool name: 'localmaven', type: 'maven'
+        sh "${mvnHome}/bin/mvn compile"
+        echo "compiling the application"
       }
     }
     
