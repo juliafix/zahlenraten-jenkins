@@ -4,10 +4,11 @@ pipeline {
   
   stages {
   
-    stage ("build"){
+    stage ("compile"){
     
       steps {
-        echo 'bulding the application'
+        sh 'mvn compile'
+        echo 'compiling the application'
       }
     }
     
