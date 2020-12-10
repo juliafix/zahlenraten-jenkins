@@ -8,25 +8,27 @@ pipeline {
   
   stages {
   
-    stage ('compile'){
+    stage ('Compile'){
       
       steps {
         sh 'mvn compile'
-        echo "compiling the application"
+        echo 'compiling the application'
       }
     }
     
-    stage ("test"){
+    stage ("Test"){
     
       steps {
+        sh 'mvn test'
         echo 'testing the application'
       }
     }
     
-    stage ("deploy"){
+    stage ("Clean"){
     
       steps {
-        echo 'deploying the application'
+        sh 'mvn clean'
+        echo 'cleaning the application'
       }
     }
   }
