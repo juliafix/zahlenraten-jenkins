@@ -1,8 +1,12 @@
 pipeline {
 
   agent any
+  environment {
+    PATH = '/var/jenkins_home/tools/hudson.tasks.Maven_MavenInstallation/localmaven/bin/mvn:$PATH'
+  }
   
   stages {
+    tool name: 'localmaven', type: 'maven'
   
     stage ('compile'){
     
