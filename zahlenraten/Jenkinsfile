@@ -7,6 +7,10 @@ pipeline {
   }
   
   stages {
+    
+    stage ('preparations'){
+      sh 'cd /var/jenkins_home/workspace/Zahlenraten-Jenkinsfile/zahlenraten'
+    }
   
     stage ('compile'){
       
